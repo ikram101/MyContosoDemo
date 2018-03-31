@@ -1,0 +1,78 @@
+﻿
+@model IEnumerable< ContosoUniversity.Models.Instructor>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<table  class="table"> 
+
+    <tr>
+        <th> Last Name</th>
+        <th>First Name</th>
+        <th>Hire date</th>
+        <th>Office location</th>
+        <th>List of courses</th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+
+    <tr>
+        <td> @Html.DisplayFor(m => item.FirstMidName) </td>
+
+        <td> @Html.DisplayFor(m => item.LastName) </td>
+
+        <td> @Html.DisplayFor(m => item.OfficeAssignment.Location) </td>
+
+        <td></td>
+
+        <td>
+
+            @Html.ActionLink("Select", "Index", new { id = item.ID }) |
+            @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+
+
+        </td>
+
+    </tr>
+    }
+
+
+</table>
+
+@{
+
+    IEnumerable<ContosoUniversity.Models.Instructor> instructorCourses = ViewBag.InstructorCourses;
+
+    <h2> Courses Taught by Selected Instructor</h2>
+
+    <table class="table">
+
+
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+
+        </tr>
+
+
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+    </table>
+
+}
+
+
