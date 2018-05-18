@@ -14,9 +14,26 @@ namespace MyContosoApp01.Controllers
     {
         private ContosoAppContext db = new ContosoAppContext();
 
+        static int test = 102;
         // GET: Student
         public ActionResult Index()
         {
+            Student student = db.Students.Find(2);
+
+
+            //Course course = db.Courses.Find(2);
+
+            //List<string> myList = new List<string>();
+
+            //foreach(var x in student.Enrollments)
+            //{
+            //    myList.Add(x.CourseID.ToString());
+            //}
+            //Student student2 = db.Students.Where(s => s.ID == 2).SingleOrDefault();
+
+            test++;
+            ViewBag.TotalStudents = test;
+
             return View(db.Students.ToList());
         }
 
@@ -65,7 +82,10 @@ namespace MyContosoApp01.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Student student = db.Students.Find(id);
+            Student student = db.Students.Find(2);
+
+            Student student2 = db.Students.Where(s=>s.ID==2).SingleOrDefault();
+
             if (student == null)
             {
                 return HttpNotFound();

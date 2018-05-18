@@ -12,6 +12,9 @@ namespace MyContosoApp01.DAL
     {
         public ContosoAppContext() : base()
         {
+            //this.Configuration.LazyLoadingEnabled = false;
+
+           // this.Configuration.ProxyCreationEnabled = false;
         }
 
         public DbSet<Student> Students { get; set; }

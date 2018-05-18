@@ -8,12 +8,17 @@ namespace MyContosoApp01.DAL
 {
     public class Student
     {
+
+        public Student()
+        {
+            this.Enrollments = new HashSet<Enrollment>();
+        }
         public int ID { get; set; }
         public string LastName { get; set; }
         public string FirstMidName { get; set; }
         public DateTime EnrollmentDate { get; set; }
 
-        public virtual ICollection<Enrollment> Enrollments { get; set; }
+        public virtual  ICollection<Enrollment> Enrollments { get; set; }
     }
 
 
@@ -35,11 +40,15 @@ namespace MyContosoApp01.DAL
 
     public class Course
     {
+        public Course()
+        {
+            this.Enrollments = new List<Enrollment>();
+        }
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int CourseID { get; set; }
         public string Title { get; set; }
         public int Credits { get; set; }
 
-        public virtual ICollection<Enrollment> Enrollments { get; set; }
+        public virtual List<Enrollment> Enrollments { get; set; }
     }
 }
