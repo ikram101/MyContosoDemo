@@ -12,6 +12,8 @@ namespace MyContosoApp01.Controllers
 {
     public class StudentController : Controller
     {
+
+        //SyedContosoBranch01
         private ContosoAppContext db = new ContosoAppContext();
 
         static int test = 102;
@@ -20,8 +22,7 @@ namespace MyContosoApp01.Controllers
         {
             Student student = db.Students.Find(2);
 
-            //hello
-             
+                    
 
             test++;
             ViewBag.TotalStudents = test;
