@@ -12,7 +12,7 @@ namespace MyContosoApp01.Controllers
 {
     public class StudentController : Controller
     {
-        //
+        //Testing stage
         //SyedContosoBranch01
         private ContosoAppContext db = new ContosoAppContext();
 
