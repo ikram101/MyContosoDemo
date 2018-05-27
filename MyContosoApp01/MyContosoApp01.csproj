@@ -164,10 +164,9 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\StudentController.cs" />
-    <Compile Include="Entities\ContosoAppEntities.cs" />
+    <Compile Include="Controllers\StudentsController.cs" />
+    <Compile Include="Entities-2\Student.cs" />
     <Compile Include="DAL\ContosoAppContext.cs" />
-    <Compile Include="DAL\ContosoAppInitializer.cs" />
     <Compile Include="GlimpseSecurityPolicy.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -179,6 +178,14 @@
     <Compile Include="Migrations\201805190704348_AddDataAnotations.cs" />
     <Compile Include="Migrations\201805190704348_AddDataAnotations.Designer.cs">
       <DependentUpon>201805190704348_AddDataAnotations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805270035504_123.cs" />
+    <Compile Include="Migrations\201805270035504_123.Designer.cs">
+      <DependentUpon>201805270035504_123.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805270426525_2ndIteration.cs" />
+    <Compile Include="Migrations\201805270426525_2ndIteration.Designer.cs">
+      <DependentUpon>201805270426525_2ndIteration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -220,14 +227,15 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Student\Create.cshtml" />
-    <Content Include="Views\Student\Delete.cshtml" />
-    <Content Include="Views\Student\Details.cshtml" />
-    <Content Include="Views\Student\Edit.cshtml" />
-    <Content Include="Views\Student\Index.cshtml" />
+    <Content Include="Views\Students\Create.cshtml" />
+    <Content Include="Views\Students\Delete.cshtml" />
+    <Content Include="Views\Students\Details.cshtml" />
+    <Content Include="Views\Students\Edit.cshtml" />
+    <Content Include="Views\Students\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Entities\" />
     <Folder Include="Models\" />
     <Folder Include="ViewModels\" />
   </ItemGroup>
@@ -250,6 +258,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805190704348_AddDataAnotations.resx">
       <DependentUpon>201805190704348_AddDataAnotations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805270035504_123.resx">
+      <DependentUpon>201805270035504_123.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805270426525_2ndIteration.resx">
+      <DependentUpon>201805270426525_2ndIteration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

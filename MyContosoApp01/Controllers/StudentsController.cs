@@ -7,30 +7,21 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using MyContosoApp01.DAL;
+using MyContosoApp01.Entities_V1;
 
 namespace MyContosoApp01.Controllers
 {
-    public class StudentController : Controller
+    public class StudentsController : Controller
     {
-        //Testing stage
-        //SyedContosoBranch01
         private ContosoAppContext db = new ContosoAppContext();
 
-        static int test = 102;
-        // GET: Student
+        // GET: Students
         public ActionResult Index()
         {
-            Student student = db.Students.Find(2);
-
-                    
-
-            test++;
-            ViewBag.TotalStudents = test;
-
             return View(db.Students.ToList());
         }
 
-        // GET: Student/Details/5
+        // GET: Students/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -45,13 +36,13 @@ namespace MyContosoApp01.Controllers
             return View(student);
         }
 
-        // GET: Student/Create
+        // GET: Students/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Student/Create
+        // POST: Students/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -68,17 +59,14 @@ namespace MyContosoApp01.Controllers
             return View(student);
         }
 
-        // GET: Student/Edit/5
+        // GET: Students/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Student student = db.Students.Find(2);
-
-            Student student2 = db.Students.Where(s=>s.ID==2).SingleOrDefault();
-
+            Student student = db.Students.Find(id);
             if (student == null)
             {
                 return HttpNotFound();
@@ -86,7 +74,7 @@ namespace MyContosoApp01.Controllers
             return View(student);
         }
 
-        // POST: Student/Edit/5
+        // POST: Students/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -102,7 +90,7 @@ namespace MyContosoApp01.Controllers
             return View(student);
         }
 
-        // GET: Student/Delete/5
+        // GET: Students/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -117,7 +105,7 @@ namespace MyContosoApp01.Controllers
             return View(student);
         }
 
-        // POST: Student/Delete/5
+        // POST: Students/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

@@ -1,7 +1,8 @@
 namespace MyContosoApp01.Migrations
 {
+    using MyContosoApp01.Entities_V1;
     using System;
-    using System.Data.Entity;
+    using System.Collections.Generic;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
@@ -12,12 +13,7 @@ namespace MyContosoApp01.Migrations
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(MyContosoApp01.DAL.ContosoAppContext context)
-        {
-            //  This method will be called after migrating to the latest version.
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data.
+        
         }
     }
-}
